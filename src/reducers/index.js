@@ -5,10 +5,16 @@ const initialState = {
     isLoggedIn: false,
     currentUsername: null,
     currentPassword: null
-}
+};
 
-export default handleActions({
-    [actions.SET_SIGN_IN]: (state, action) => {
-        return { ...state, isLoggedIn: action.payload, error: null };
-    }
-})
+export default function theReducer(state = initialState, action) {
+	switch(action.type) {
+		case actions.SET_SIGN_IN:
+			return Object.assign({}, state, {
+				isLoggedIn: action.payload
+			});
+
+		default:
+			return state;
+	}
+}
