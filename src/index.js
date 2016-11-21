@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
@@ -8,16 +7,16 @@ import thunk from 'redux-thunk'
 import actions from './actions/index';
 import reducers from './reducers/index';
 import App from './App';
+import Routes from './components/routes';
 import './index.css';
-import store from './store';
 
-let store = createStore(reducers, applyMiddleware(thunk));
+const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    {Routes}
   </Provider>,
   document.getElementById('root')
 );
 
-exports.store = store;
+export default store;
