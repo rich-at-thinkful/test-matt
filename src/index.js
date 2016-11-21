@@ -7,14 +7,20 @@ import thunk from 'redux-thunk'
 import actions from './actions/index';
 import reducers from './reducers/index';
 import App from './App';
-import Routes from './components/routes';
 import './index.css';
+import { Router, Route, Link, browserHistory } from 'react-router';
+import Login from './components/login';
+import Register from './components/register';
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
-    {Routes}
+    <Router history={browserHistory}>
+		<Route path='/' component={App} />
+		<Route path='/login' component={Login} />
+		<Route path='/register' component={Register} />
+	</Router>
   </Provider>,
   document.getElementById('root')
 );
