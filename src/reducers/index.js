@@ -1,9 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import { handleActions } from 'redux-actions';
+import * as actions from '../actions/index';
 
-import './config';
-import App from './components/App';
-import './index.css';
-import store from './store';
+const initialState = {
+    isLoggedIn: false,
+    currentUsername: null,
+    currentPassword: null
+}
 
+export default handleActions({
+    [actions.SET_SIGN_IN]: (state, action) => {
+        return { ...state, isLoggedIn: action.payload, error: null };
+    }
+})

@@ -11,12 +11,10 @@
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-redux": "^4.4.6",
+    "react-router": "^3.0.0",
     "redux": "^3.6.0",
-<<<<<<< HEAD
+    "redux-actions": "^1.0.1",
     "redux-thunk": "^2.1.0"
-=======
-    "react-router": "^3.0.0"
->>>>>>> 7b45b6f549160ad2fdf9042c89d9597d750dffab
   },
   "scripts": {
     "start": "react-scripts start",
