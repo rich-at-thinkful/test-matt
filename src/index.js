@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
@@ -9,7 +8,6 @@ import actions from './actions/index';
 import reducers from './reducers/index';
 import App from './App';
 import './index.css';
-import store from './store';
 
 let store = createStore(reducers, applyMiddleware(thunk));
 
