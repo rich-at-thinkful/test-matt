@@ -2,6 +2,7 @@
   "name": "sup-front",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://rich-at-thinkful.github.io/test-matt",
   "devDependencies": {
     "gh-pages": "^0.12.0",
     "react-scripts": "0.7.0"
@@ -21,6 +22,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "npm run build&&gh-pages -d build"
+    "deploy": "gh-pages -d build"
   }
 }
