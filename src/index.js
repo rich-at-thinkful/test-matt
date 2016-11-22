@@ -11,16 +11,17 @@ import './index.css';
 import { Router, Route, Link, browserHistory } from 'react-router';
 import Login from './components/login';
 import Register from './components/register';
+import Search from './components/search';
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-		<Route path='/' component={App}>
-			<Route path='/login' component={Login} />
-			<Route path='/register' component={Register} />
-		</Route>
+		<Route path='/' component={App} />
+		<Route path='/login' component={Login} />
+		<Route path='/register' component={Register} />
+		<Route path="/message" component={Search} />
 	</Router>
   </Provider>,
   document.getElementById('root')

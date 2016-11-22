@@ -11,6 +11,9 @@ class App extends Component {
                     <img src={logo} className="App-logo" alt="logo" />
                 </div>
                 <h1>Sup</h1>
+
+                <p><Link to={`/login`}>Login</Link></p>
+                <p><Link to={`/register`}>Register</Link></p>
             </div>
         );
     }
