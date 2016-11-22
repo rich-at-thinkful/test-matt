@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
@@ -26,4 +27,34 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+
+fetch('https://polar-escarpment-86427.herokuapp.com/api/v1/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username: 'tester1',
+        password: 'tester1'
+      })
+    }).then(response => response.json().then(json => ({ json, response })))
+      .then(({json, response}) => {
+      if (response.ok === false) {
+        return Promise.reject(json);
+      }
+      return json;
+    })
+    .then(
+      data => {
+    console.log(data);
+      },
+      ({response, data}) => {
+          console.log(data);
+          
+          if(response.status == 401) {
+              console.log(data.error);
+          }
+      }
+    );
+    
 export default store;
