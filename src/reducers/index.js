@@ -10,6 +10,7 @@ const initialState = {
 export default function theReducer(state = initialState, action) {
 	switch(action.type) {
 		case actions.SET_SIGN_IN:
+			console.log("did I change?", state);
 			return Object.assign({}, state, {
 				isLoggedIn: action.payload
 			});
