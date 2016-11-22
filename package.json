@@ -2,7 +2,6 @@
   "name": "sup-front",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://matcodesalot.github.io/sup-front/",
   "devDependencies": {
     "gh-pages": "^0.12.0",
     "react-scripts": "0.7.0"
